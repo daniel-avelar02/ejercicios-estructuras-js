@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesamiento de Valores</title>
+</head>
+<body>
+    <h1>Procesador de Valores Enteros</h1>
+    <script>
+        function procesarValores() {
+            let negativos = 0;
+            let positivos = 0;
+            let multiplosDe15 = 0;
+            let acumuladoPares = 0;
+
+            for (let i = 0; i < 10; i++) {
+                // Capturar el valor ingresado por el usuario
+                let valor = parseInt(prompt('Ingrese un valor entero:'), 10);
+
+                // Verificar si el valor es negativo o positivo
+                if (valor < 0) {
+                    negativos++;
+                } else if (valor > 0) {
+                    positivos++;
+                }
+
+                // Verificar si el valor es múltiplo de 15
+                if (valor % 15 === 0) {
+                    multiplosDe15++;
+                }
+
+                // Verificar si el valor es par y acumularlo
+                if (valor % 2 === 0) {
+                    acumuladoPares += valor;
+                }
+            }
+
+            // Mostrar los resultados
+            alert(`Cantidad de valores negativos: ${negativos}`);
+            alert(`Cantidad de valores positivos: ${positivos}`);
+            alert(`Cantidad de múltiplos de 15: ${multiplosDe15}`);
+            alert(`Valor acumulado de los números pares: ${acumuladoPares}`);
+        }
+
+        // Ejecutar la función para procesar los valores
+        procesarValores();
+    </script>
+</body>
+</html>

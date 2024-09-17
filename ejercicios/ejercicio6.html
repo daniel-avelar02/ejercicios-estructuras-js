@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descuento de Viajes</title>
+</head>
+<body>
+    <h1>Calculadora de Descuento para Viajes</h1>
+    <script>
+        function calcularDescuentoViaje(origen, destino) {
+            let descuento;
+
+            // Verificar el origen y el destino para aplicar el descuento correspondiente
+            if (origen.toUpperCase() === 'PALMA') {
+                switch (destino.toUpperCase()) {
+                    case 'LA COSTA DEL SOL':
+                        descuento = 5;
+                        break;
+                    case 'PANCHIMALCO':
+                        descuento = 10;
+                        break;
+                    case 'PUERTO EL TRIUNFO':
+                        descuento = 15;
+                        break;
+                    default:
+                        descuento = 0;
+                        break;
+                }
+            } else {
+                descuento = 0;
+            }
+
+            return descuento;
+        }
+
+        function mostrarDescuentoViaje() {
+            const origen = prompt('Ingrese la ciudad de origen:');
+            const destino = prompt('Ingrese la ciudad de destino:');
+            const descuento = calcularDescuentoViaje(origen, destino);
+
+            if (descuento > 0) {
+                alert(`Descuento aplicable: ${descuento}%`);
+            } else {
+                alert('No se aplica descuento para el viaje seleccionado.');
+            }
+        }
+
+        // Ejecutar la función para mostrar el descuento
+        mostrarDescuentoViaje();
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Multiplicar</title>
+</head>
+<body>
+    <h1>Generador de Tabla de Multiplicar</h1>
+    <script>
+        function mostrarTablaMultiplicar() {
+            // Capturar el número ingresado por el usuario
+            let numero = parseInt(prompt('Ingrese un número para mostrar su tabla de multiplicar:'), 10);
+
+            // Verificar que el número ingresado sea válido
+            if (isNaN(numero)) {
+                alert('Por favor, ingrese un número válido.');
+                return;
+            }
+
+            // Crear una cadena para almacenar la tabla de multiplicar
+            let tabla = `Tabla de multiplicar del ${numero}:\n`;
+
+            // Calcular y construir la tabla de multiplicar
+            for (let i = 1; i <= 10; i++) {
+                tabla += `${numero} x ${i} = ${numero * i}\n`;
+            }
+
+            // Mostrar la tabla de multiplicar
+            alert(tabla);
+        }
+
+        // Ejecutar la función para mostrar la tabla de multiplicar
+        mostrarTablaMultiplicar();
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Nota Final</title>
+    <script>
+        function calcularNotaFinal(nombre, carnet, examen, tareas, asistencia, investigacion) {
+            const pesoExamen = 0.20;
+            const pesoTareas = 0.40;
+            const pesoAsistencia = 0.10;
+            const pesoInvestigacion = 0.30;
+
+            const notaFinal = (examen * pesoExamen) + 
+                              (tareas * pesoTareas) + 
+                              (asistencia * pesoAsistencia) + 
+                              (investigacion * pesoInvestigacion);
+
+            console.log(`Nombre: ${nombre}`);
+            console.log(`Carnet: ${carnet}`);
+            console.log(`Nota Final: ${notaFinal.toFixed(2)}`);
+        }
+
+        window.onload = function() {
+            calcularNotaFinal('Juan Pérez', '123456789', 85, 90, 95, 80);
+        }
+    </script>
+</head>
+<body>
+    <h1>Calcular Nota Final</h1>
+    <p>Abre la consola del navegador para ver los resultados.</p>
+</body>
+</html>

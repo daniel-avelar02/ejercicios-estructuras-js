@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descuento de Coche</title>
+</head>
+<body>
+    <h1>Calculadora de Descuento para Coches</h1>
+    <script>
+        function calcularDescuento(coche) {
+            let descuento;
+            switch (coche.toUpperCase()) {
+                case 'FORD FIESTA':
+                    descuento = 5;
+                    break;
+                case 'FORD FOCUS':
+                    descuento = 10;
+                    break;
+                case 'FORD ESCAPE':
+                    descuento = 20;
+                    break;
+                default:
+                    descuento = 0;
+                    break;
+            }
+            return descuento;
+        }
+
+        function mostrarDescuento() {
+            const coche = prompt('Ingrese el modelo del coche (FORD FIESTA, FORD FOCUS, FORD ESCAPE):');
+            const descuento = calcularDescuento(coche);
+
+            if (descuento > 0) {
+                document.write(`<h2>Modelo del coche seleccionado: ${coche}</h2>`);
+                document.write(`<p>Descuento aplicado: ${descuento}%</p>`);
+            } else {
+                document.write(`<h2>Modelo del coche no reconocido</h2>`);
+            }
+        }
+
+        // Ejecutar la función para mostrar el descuento
+        mostrarDescuento();
+    </script>
+</body>
+</html>
